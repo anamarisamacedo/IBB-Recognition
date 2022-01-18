@@ -1,0 +1,38 @@
+import cv2, sys
+from skimage import feature
+import numpy as np
+
+class BOW:
+    def __init__(self, num_points=8, radius=2, eps=1e-6, resize=100):
+        #num_points = The number of points in a circularly symmetric neighborhood to consider (thus removing relying on a square neighborhood).
+        #radius = The radius of the circle r, which allows us to account for different scales.
+
+        self.num_points = num_points * radius
+        self.radius = radius
+        self.eps = eps
+        self.resize=resize
+
+    def extract(self, img):
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        img = cv2.resize(img, (self.resize, self.resize))
+        detector = cv2.BRISK_create()
+
+        kp = detector.detect(img,None)
+        kp, des = detector.compute(img, kp)
+        
+        return hist
+
+    def create_histogram(all_bovw):  
+        im_features = np.zeros((len(X_train), nWords), "float32")
+        for i in range(len(X_train)):
+            words, distance = vq(all_bovw[i][1],centers)
+            for w in words:
+                im_features[i][w] += 1
+        return im_features
+
+# if __name__ == '__main__':
+# 	fname = sys.argv[1]
+# 	img = cv2.imread(fname)
+# 	extractor = LBP()
+# 	features = extractor.extract(img)
+# 	print(features)

@@ -1,0 +1,4 @@
+{
+    "images_path" : "data/ear_detection_predictions/test/",
+    "annotations_path" : "data/perfectly_detected_ears/annotations/recognition/ids.csv"
+}

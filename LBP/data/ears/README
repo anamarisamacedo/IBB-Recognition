@@ -1,0 +1,5 @@
+This is AWE dataset, but with bounding-box annotations for IBB: http://ears.fri.uni-lj.si/datasets.html#awe-full
+
+Class IDs are added within the annotations/recognition.
+
+However, if you would like to start the recognition task from scratch, use the images in the folder data/perfectly_detected_ears.
